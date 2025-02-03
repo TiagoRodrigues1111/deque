@@ -434,7 +434,7 @@ void deque_push_front(void* id_of_deque, void* data_to_push)
         ((struct deque*)id_of_deque)->deque_size++;
        
 
-        if(((struct deque*)id_of_deque)->deque_front > ((struct deque*)id_of_deque)->deque_size_allocated_front)               // TODO: better implementation to prevent uncontrollable increase in empty deque space
+        if(((struct deque*)id_of_deque)->deque_front > (int64_t)((struct deque*)id_of_deque)->deque_size_allocated_front)               // TODO: better implementation to prevent uncontrollable increase in empty deque space
         {
 
                 void* deque_aux = NULL;
@@ -526,9 +526,8 @@ void deque_push_back(void* id_of_deque, void* data_to_push)
         ((struct deque*)id_of_deque)->deque_size++;
        
 
-        if(((struct deque*)id_of_deque)->deque_back >= ((struct deque*)id_of_deque)->deque_size_allocated_back)               // TODO: better implementation to prevent uncontrollable increase in empty deque space
+        if(((struct deque*)id_of_deque)->deque_back >= (int64_t)((struct deque*)id_of_deque)->deque_size_allocated_back)               // TODO: better implementation to prevent uncontrollable increase in empty deque space
         {
-
                 void* deque_aux = NULL;
                 if(1 == (((struct deque*)id_of_deque)->k_aux_back))
                 {
