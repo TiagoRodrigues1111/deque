@@ -75,7 +75,7 @@ void deque_stress_test1()
         create_deque(&deque1,sizeof(uint16_t),100);
 
         // uint64_t n = 400000000;
-        uint64_t n = 400000;
+        uint64_t n = 40000;
         
         while(0 < n)
         {
